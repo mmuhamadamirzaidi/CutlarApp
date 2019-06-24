@@ -21,7 +21,7 @@ Barber Application or CUTLAR helps clients to book appointments and modernizing 
 
 ### E-Commerce
  1) Load Product (From Barber Shop)
- 2) Buy Medicines/Services/Treatment
+ 2) Buy Products/Services/Treatment
  - Products Name
  - Details/Descriptions
  - Products Image
