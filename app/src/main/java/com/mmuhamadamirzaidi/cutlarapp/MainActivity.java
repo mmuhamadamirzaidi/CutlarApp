@@ -46,18 +46,18 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, APP_REQUEST_CODE);
     }
 
-    @OnClick(R.id.button_skip)
-    void SkipSignIn(){
-        Intent mainIntent = new Intent(MainActivity.this, OtherActivity.class);
-        startActivity(mainIntent);
-    }
-
 //    @OnClick(R.id.button_skip)
 //    void SkipSignIn(){
-//        Intent skipIntent = new Intent(this, DashboardActivity.class);
-//        skipIntent.putExtra(Common.IS_SIGNIN, false);
-//        startActivity(skipIntent);
+//        Intent mainIntent = new Intent(MainActivity.this, OtherActivity.class);
+//        startActivity(mainIntent);
 //    }
+
+    @OnClick(R.id.button_skip)
+    void SkipSignIn(){
+        Intent skipIntent = new Intent(this, DashboardActivity.class);
+        skipIntent.putExtra(Common.IS_SIGNIN, false);
+        startActivity(skipIntent);
+    }
 
 
     @Override
