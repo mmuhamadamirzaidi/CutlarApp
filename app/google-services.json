@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "62072196907",
+    "firebase_url": "https://cutlarapp.firebaseio.com",
+    "project_id": "cutlarapp",
+    "storage_bucket": "cutlarapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62072196907:android:a3c86c88506a1353",
+        "android_client_info": {
+          "package_name": "com.mmuhamadamirzaidi.cutlarapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62072196907-4gq7hnmmk0afo68rtbilai83kbvso80n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mmuhamadamirzaidi.cutlarapp",
+            "certificate_hash": "2f1959cb05759578ae9430a34b2a8eddf3d01f13"
+          }
+        },
+        {
+          "client_id": "62072196907-ei2tu0sbptakbf5h97urqkk5s96uh009.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALMJmSz9PGMbApk6pJd1gVKFW5Z5qBgfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62072196907-ei2tu0sbptakbf5h97urqkk5s96uh009.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
