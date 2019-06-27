@@ -4,4 +4,7 @@
     <string name="FACEBOOK_APP_ID">391031941756691</string>
     <string name="ACCOUNT_KIT_CLIENT_TOKEN">8c635ad14486b3a066b44411647e5c09</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
