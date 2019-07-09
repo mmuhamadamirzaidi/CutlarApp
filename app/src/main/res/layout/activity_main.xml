@@ -21,7 +21,7 @@
 
             <ImageView
                 android:id="@+id/img_home"
-                android:src="@drawable/logosecondaryblack"
+                app:srcCompat="@drawable/logosecondaryblack"
                 android:layout_width="wrap_content"
                 android:layout_height="300dp" />
 
