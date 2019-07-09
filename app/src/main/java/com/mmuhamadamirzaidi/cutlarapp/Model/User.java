@@ -1,15 +1,15 @@
 package com.mmuhamadamirzaidi.cutlarapp.Model;
 
 public class User {
-    private String name, address, phoneNumber;
+    private String name, address, phone;
 
     public User() {
     }
 
-    public User(String name, String address, String phoneNumber) {
+    public User(String name, String address, String phone) {
         this.name = name;
         this.address = address;
-        this.phoneNumber = phoneNumber;
+        this.phone = phone;
     }
 
     public String getName() {
@@ -28,11 +28,11 @@ public class User {
         this.address = address;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
