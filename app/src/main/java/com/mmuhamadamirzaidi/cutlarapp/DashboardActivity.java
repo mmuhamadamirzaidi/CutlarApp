@@ -75,9 +75,10 @@ public class DashboardActivity extends AppCompatActivity {
                                             if (task.isSuccessful()) {
                                                 DocumentSnapshot userSnapShot = task.getResult();
                                                 if (!userSnapShot.exists()) {
-//                                                    dialog.dismiss();
                                                     showUpdateDialog(account.getPhoneNumber().toString());
                                                 }
+                                                if (dialog.isShowing())
+                                                    dialog.dismiss();
                                             }
                                         }
                                     });
@@ -89,7 +90,7 @@ public class DashboardActivity extends AppCompatActivity {
                         Toast.makeText(DashboardActivity.this, "" + accountKitError.getErrorType().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-                dialog.dismiss();
+//                dialog.dismiss();
             }
         }
 
@@ -107,6 +108,7 @@ public class DashboardActivity extends AppCompatActivity {
                 return loadFragment(fragment);
             }
         });
+        bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
 
     private boolean loadFragment(Fragment fragment) {
@@ -119,9 +121,6 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     private void showUpdateDialog(final String phoneNumber) {
-
-        if (dialog.isShowing())
-            dialog.dismiss();
 
         //Init dialog
         bottomSheetDialog = new BottomSheetDialog(this);
@@ -137,7 +136,8 @@ public class DashboardActivity extends AppCompatActivity {
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.show();
+                if (!dialog.isShowing())
+                    dialog.show();
                 User user = new User(edt_name.getText().toString().trim(),
                         edt_address.getText().toString().trim(),
                         phoneNumber);
@@ -147,14 +147,16 @@ public class DashboardActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 bottomSheetDialog.dismiss();
-                                dialog.dismiss();
+                                if (dialog.isShowing())
+                                    dialog.dismiss();
                                 Toast.makeText(DashboardActivity.this, "Successfully update. Thank you!", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         bottomSheetDialog.dismiss();
-                        dialog.dismiss();
+                        if (dialog.isShowing())
+                            dialog.dismiss();
                         Toast.makeText(DashboardActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
