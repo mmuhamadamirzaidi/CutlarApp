@@ -1,8 +1,7 @@
 package com.mmuhamadamirzaidi.cutlarapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class OtherActivity extends AppCompatActivity {
 

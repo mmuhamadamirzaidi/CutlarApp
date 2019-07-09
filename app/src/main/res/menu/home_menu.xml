@@ -8,6 +8,11 @@
         android:title="Home">
     </item>
 
+    <item android:id="@+id/action_appointment"
+        android:icon="@drawable/ic_book_white_24dp"
+        android:title="Appointment">
+    </item>
+
     <item android:id="@+id/action_cart"
         android:icon="@drawable/ic_shopping_basket_white_24dp"
         android:title="Cart">
