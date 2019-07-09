@@ -75,6 +75,7 @@ public class DashboardActivity extends AppCompatActivity {
                                             if (task.isSuccessful()) {
                                                 DocumentSnapshot userSnapShot = task.getResult();
                                                 if (!userSnapShot.exists()) {
+//                                                    dialog.dismiss();
                                                     showUpdateDialog(account.getPhoneNumber().toString());
                                                 }
                                             }
@@ -88,6 +89,7 @@ public class DashboardActivity extends AppCompatActivity {
                         Toast.makeText(DashboardActivity.this, "" + accountKitError.getErrorType().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
+                dialog.dismiss();
             }
         }
 
@@ -128,13 +130,14 @@ public class DashboardActivity extends AppCompatActivity {
         bottomSheetDialog.setCancelable(false);
         View sheetView = getLayoutInflater().inflate(R.layout.dialog_update_information, null);
 
-        Button btn_update = (Button) findViewById(R.id.btn_update);
+        Button btn_update = (Button) sheetView.findViewById(R.id.btn_update);
         final EditText edt_name = (EditText) sheetView.findViewById(R.id.edt_name);
         final EditText edt_address = (EditText) sheetView.findViewById(R.id.edt_address);
 
         btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dialog.show();
                 User user = new User(edt_name.getText().toString().trim(),
                         edt_address.getText().toString().trim(),
                         phoneNumber);
@@ -144,12 +147,14 @@ public class DashboardActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 bottomSheetDialog.dismiss();
+                                dialog.dismiss();
                                 Toast.makeText(DashboardActivity.this, "Successfully update. Thank you!", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         bottomSheetDialog.dismiss();
+                        dialog.dismiss();
                         Toast.makeText(DashboardActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
