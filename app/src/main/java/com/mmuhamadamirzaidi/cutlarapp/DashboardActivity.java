@@ -26,7 +26,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.mmuhamadamirzaidi.cutlarapp.Common.Common;
-import com.mmuhamadamirzaidi.cutlarapp.Fragments.CartFragment;
+import com.mmuhamadamirzaidi.cutlarapp.Fragments.ShopFragment;
 import com.mmuhamadamirzaidi.cutlarapp.Fragments.HomeFragment;
 import com.mmuhamadamirzaidi.cutlarapp.Model.User;
 
@@ -102,8 +102,8 @@ public class DashboardActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.action_home)
                     fragment = new HomeFragment();
-                else if (item.getItemId() == R.id.action_cart)
-                    fragment = new CartFragment();
+                else if (item.getItemId() == R.id.action_shop)
+                    fragment = new ShopFragment();
 
                 return loadFragment(fragment);
             }

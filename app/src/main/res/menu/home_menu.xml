@@ -13,9 +13,9 @@
         android:title="Appointment">
     </item>
 
-    <item android:id="@+id/action_cart"
+    <item android:id="@+id/action_shop"
         android:icon="@drawable/ic_shopping_basket_white_24dp"
-        android:title="Cart">
+        android:title="Shop">
     </item>
 
     <item android:id="@+id/action_profile"
