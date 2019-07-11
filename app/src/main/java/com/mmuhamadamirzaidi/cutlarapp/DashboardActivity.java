@@ -77,6 +77,11 @@ public class DashboardActivity extends AppCompatActivity {
                                                 if (!userSnapShot.exists()) {
                                                     showUpdateDialog(account.getPhoneNumber().toString());
                                                 }
+                                                else{
+                                                    //If user already sign in
+                                                    Common.currentUser = userSnapShot.toObject(User.class);
+                                                    bottomNavigationView.setSelectedItemId(R.id.action_home);
+                                                }
                                                 if (dialog.isShowing())
                                                     dialog.dismiss();
                                             }
@@ -108,7 +113,6 @@ public class DashboardActivity extends AppCompatActivity {
                 return loadFragment(fragment);
             }
         });
-        bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
 
     private boolean loadFragment(Fragment fragment) {
@@ -138,7 +142,7 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!dialog.isShowing())
                     dialog.show();
-                User user = new User(edt_name.getText().toString().trim(),
+                final User user = new User(edt_name.getText().toString().trim(),
                         edt_address.getText().toString().trim(),
                         phoneNumber);
                 userRef.document(phoneNumber)
@@ -149,6 +153,10 @@ public class DashboardActivity extends AppCompatActivity {
                                 bottomSheetDialog.dismiss();
                                 if (dialog.isShowing())
                                     dialog.dismiss();
+
+                                Common.currentUser = user;
+                                bottomNavigationView.setSelectedItemId(R.id.action_home);
+
                                 Toast.makeText(DashboardActivity.this, "Successfully update. Thank you!", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {

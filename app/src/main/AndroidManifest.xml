@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BookingActivity"></activity>
         <activity android:name=".DashboardActivity" />
         <activity android:name=".OtherActivity" />
 
@@ -26,7 +27,6 @@
 
         <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
         <activity android:name=".MainActivity" />
-
         <activity
             android:name=".SplashActivity"
             android:configChanges="orientation"

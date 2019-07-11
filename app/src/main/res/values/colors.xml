@@ -9,4 +9,8 @@
     <color name="textColor">#6e6e6e</color>
 
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="done">#26a65b</color>
+    <color name="undone">#c0392b</color>
 </resources>
