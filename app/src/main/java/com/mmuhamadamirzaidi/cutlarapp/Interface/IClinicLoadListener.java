@@ -2,8 +2,8 @@ package com.mmuhamadamirzaidi.cutlarapp.Interface;
 
 import java.util.List;
 
-public interface IAllClinicLoadListener {
+public interface IClinicLoadListener {
 
-    void onAllClinicLoadSuccess(List<String> areaNameList);
-    void onAllClinicLoadFailed(String message);
+    void onClinicLoadSuccess(List<String> areaNameList);
+    void onClinicLoadFailed(String message);
 }
