@@ -12,10 +12,8 @@
         android:id="@+id/container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
         android:background="@drawable/bg_list"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,18 +21,19 @@
 
         <TextView
 
-            android:id="@+id/txt_clinic_name"
+            android:id="@+id/txt_doctor_name"
             android:fontFamily="@font/mm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
             android:layout_marginTop="20dp"
             android:text="Clinic Branch Name"
             android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
@@ -43,11 +42,13 @@
             android:id="@+id/txt_clinic_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_clinic_name"
-            android:layout_alignStart="@+id/txt_clinic_name"
-            android:layout_alignLeft="@id/txt_clinic_name"
+            android:layout_below="@id/txt_doctor_name"
+            android:layout_alignStart="@+id/txt_doctor_name"
+            android:layout_alignLeft="@id/txt_doctor_name"
             android:layout_marginTop="8dp"
             android:lineSpacingExtra="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:text="Address Of Branch Clinic"
             android:textColor="@color/textColor" />
 
@@ -61,14 +62,12 @@
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:src="@drawable/profile"
+        app:civ_border_color="#f4f4f4"
+        app:civ_border_width="2dp"
         app:layout_constraintEnd_toStartOf="@+id/container"
         app:layout_constraintStart_toStartOf="@+id/container"
-        app:layout_constraintTop_toTopOf="@+id/container"
-        android:src="@drawable/profile"
-        app:civ_border_color="#F4F4F4"
-        app:civ_border_width="2dp" />
+        app:layout_constraintTop_toTopOf="@+id/container" />
 </android.support.constraint.ConstraintLayout>

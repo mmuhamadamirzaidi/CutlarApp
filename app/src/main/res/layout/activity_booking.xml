@@ -60,20 +60,18 @@
         android:id="@+id/client_informations"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
         android:orientation="vertical"
         android:layout_below="@id/subtitle_dashboard_client">
 
         <com.shuhart.stepview.StepView
             android:id="@+id/step_view"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             app:sv_doneCircleColor="@color/done"
             app:sv_doneStepLineColor="@color/done"
             app:sv_doneStepMarkColor="@color/black"
-            app:sv_typeface="@font/mm"
 
-            app:sv_doneTextColor="@color/white"
+            app:sv_doneTextColor="@color/undone"
             app:sv_selectedCircleColor="@color/undone"
             app:sv_selectedStepNumberColor="@color/white"
             app:sv_selectedTextColor="@color/undone" />

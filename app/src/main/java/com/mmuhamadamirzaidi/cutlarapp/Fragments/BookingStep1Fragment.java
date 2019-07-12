@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.mmuhamadamirzaidi.cutlarapp.Adapter.MyClinicAdapter;
+import com.mmuhamadamirzaidi.cutlarapp.Common.SpacesItemDecoration;
 import com.mmuhamadamirzaidi.cutlarapp.Interface.IBranchLoadListener;
 import com.mmuhamadamirzaidi.cutlarapp.Interface.IClinicLoadListener;
 import com.mmuhamadamirzaidi.cutlarapp.Model.Clinic;
@@ -80,6 +82,7 @@ public class BookingStep1Fragment extends Fragment implements IClinicLoadListene
         unbinder = ButterKnife.bind(this, itemView);
 
         initView();
+
         loadClinic();
         
         return itemView;
@@ -87,7 +90,9 @@ public class BookingStep1Fragment extends Fragment implements IClinicLoadListene
 
     private void initView() {
         recycler_clinic.setHasFixedSize(true);
-//        recycler_clinic.setLayoutManager(new LinearLayoutManager(this));
+        recycler_clinic.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+        recycler_clinic.addItemDecoration(new SpacesItemDecoration(4));
+
     }
 
     private void loadClinic() {
