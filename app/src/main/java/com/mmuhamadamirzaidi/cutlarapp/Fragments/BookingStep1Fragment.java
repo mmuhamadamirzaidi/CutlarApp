@@ -22,6 +22,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.mmuhamadamirzaidi.cutlarapp.Adapter.MyClinicAdapter;
+import com.mmuhamadamirzaidi.cutlarapp.Common.Common;
 import com.mmuhamadamirzaidi.cutlarapp.Common.SpacesItemDecoration;
 import com.mmuhamadamirzaidi.cutlarapp.Interface.IBranchLoadListener;
 import com.mmuhamadamirzaidi.cutlarapp.Interface.IClinicLoadListener;
@@ -136,6 +137,8 @@ public class BookingStep1Fragment extends Fragment implements IClinicLoadListene
     private void loadBranch(String cityName) {
         dialog.show();
 
+        Common.city = cityName;
+
         branchRef = FirebaseFirestore.getInstance()
                 .collection("Clinic")
                 .document(cityName)
@@ -148,8 +151,11 @@ public class BookingStep1Fragment extends Fragment implements IClinicLoadListene
                 List<Clinic> list = new ArrayList<>();
 
                 if (task.isSuccessful()){
-                    for (QueryDocumentSnapshot documentSnapshot:task.getResult())
-                        list.add(documentSnapshot.toObject(Clinic.class));
+                    for (QueryDocumentSnapshot documentSnapshot:task.getResult()){
+                        Clinic clinic = documentSnapshot.toObject(Clinic.class);
+                        clinic.setClinicId(documentSnapshot.getId());
+                        list.add(clinic);
+                    }
 
                     iBranchLoadListener.onBranchLoadSuccess(list);
                 }

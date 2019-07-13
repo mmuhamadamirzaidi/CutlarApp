@@ -13,4 +13,6 @@
 
     <color name="done">#26a65b</color>
     <color name="undone">#c0392b</color>
+
+    <color name="onclick">#E5E8FF</color>
 </resources>
