@@ -217,7 +217,6 @@ public class BookingActivity extends AppCompatActivity {
                     booking_step.setText("Step 4");
                     booking_instruction.setText("Confirm Booking");
                     btn_previous_step.setEnabled(true);
-//                    btn_next_step.setEnabled(false);
                     btn_next_step.setText("NEXT");
                 }
                 btn_next_step.setEnabled(false);

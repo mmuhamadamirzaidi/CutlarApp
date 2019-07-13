@@ -26,6 +26,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.mmuhamadamirzaidi.cutlarapp.Common.Common;
+import com.mmuhamadamirzaidi.cutlarapp.Fragments.AppointmentFragment;
+import com.mmuhamadamirzaidi.cutlarapp.Fragments.NotificationFragment;
+import com.mmuhamadamirzaidi.cutlarapp.Fragments.ProfileFragment;
 import com.mmuhamadamirzaidi.cutlarapp.Fragments.ShopFragment;
 import com.mmuhamadamirzaidi.cutlarapp.Fragments.HomeFragment;
 import com.mmuhamadamirzaidi.cutlarapp.Model.User;
@@ -76,8 +79,7 @@ public class DashboardActivity extends AppCompatActivity {
                                                 DocumentSnapshot userSnapShot = task.getResult();
                                                 if (!userSnapShot.exists()) {
                                                     showUpdateDialog(account.getPhoneNumber().toString());
-                                                }
-                                                else{
+                                                } else {
                                                     //If user already sign in
                                                     Common.currentUser = userSnapShot.toObject(User.class);
                                                     bottomNavigationView.setSelectedItemId(R.id.action_home);
@@ -109,6 +111,12 @@ public class DashboardActivity extends AppCompatActivity {
                     fragment = new HomeFragment();
                 else if (item.getItemId() == R.id.action_shop)
                     fragment = new ShopFragment();
+                else if (item.getItemId() == R.id.action_appointment)
+                    fragment = new AppointmentFragment();
+                else if (item.getItemId() == R.id.action_notification)
+                    fragment = new NotificationFragment();
+                else if (item.getItemId() == R.id.action_profile)
+                    fragment = new ProfileFragment();
 
                 return loadFragment(fragment);
             }
@@ -142,9 +150,11 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (!dialog.isShowing())
                     dialog.show();
+
                 final User user = new User(edt_name.getText().toString().trim(),
                         edt_address.getText().toString().trim(),
                         phoneNumber);
+
                 userRef.document(phoneNumber)
                         .set(user)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
