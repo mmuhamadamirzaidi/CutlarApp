@@ -204,7 +204,7 @@ public class BookingActivity extends AppCompatActivity {
                     btn_previous_step.setEnabled(true);
                     btn_next_step.setText("CONFIRM");
                 }
-//                btn_next_step.setEnabled(false);
+                btn_next_step.setEnabled(false);
                 setColorButton();
             }
 
