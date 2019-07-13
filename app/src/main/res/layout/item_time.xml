@@ -21,7 +21,7 @@
 
         <TextView
 
-            android:id="@+id/txt_clinic_name"
+            android:id="@+id/txt_time_slot"
             android:fontFamily="@font/mm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginLeft="32dp"
             android:layout_marginTop="20dp"
-            android:text="Clinic Branch Name"
+            android:text="10:00 - 10:20 (Time Slot)"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp"
             android:textColor="@color/colorPrimaryDark"
@@ -39,17 +39,17 @@
 
         <TextView
             android:fontFamily="@font/mr"
-            android:id="@+id/txt_clinic_address"
+            android:id="@+id/txt_time_slot_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txt_clinic_name"
-            android:layout_alignStart="@+id/txt_clinic_name"
-            android:layout_alignLeft="@id/txt_clinic_name"
+            android:layout_below="@id/txt_time_slot"
+            android:layout_alignStart="@+id/txt_time_slot"
+            android:layout_alignLeft="@id/txt_time_slot"
             android:layout_marginTop="8dp"
             android:lineSpacingExtra="8dp"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp"
-            android:text="Address Of Branch Clinic"
+            android:text="Available"
             android:textColor="@color/textColor" />
 
 

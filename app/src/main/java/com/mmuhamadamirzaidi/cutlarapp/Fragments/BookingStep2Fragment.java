@@ -83,7 +83,9 @@ public class BookingStep2Fragment extends Fragment {
 
     private void initView() {
         recycler_doctor.setHasFixedSize(true);
-        recycler_doctor.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
+        recycler_doctor.setLayoutManager(gridLayoutManager);
+
         recycler_doctor.addItemDecoration(new SpacesItemDecoration(4));
     }
 }

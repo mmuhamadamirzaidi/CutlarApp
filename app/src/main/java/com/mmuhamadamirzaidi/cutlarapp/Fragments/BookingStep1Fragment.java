@@ -91,7 +91,9 @@ public class BookingStep1Fragment extends Fragment implements IClinicLoadListene
 
     private void initView() {
         recycler_clinic.setHasFixedSize(true);
-        recycler_clinic.setLayoutManager(new GridLayoutManager(getActivity(), 1));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 1);
+        recycler_clinic.setLayoutManager(gridLayoutManager);
+
         recycler_clinic.addItemDecoration(new SpacesItemDecoration(4));
 
     }

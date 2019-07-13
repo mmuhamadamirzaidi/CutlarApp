@@ -95,7 +95,7 @@ public class MyClinicAdapter extends RecyclerView.Adapter<MyClinicAdapter.MyView
             super(itemView);
 
             txt_clinic_address = (TextView) itemView.findViewById(R.id.txt_clinic_address);
-            txt_clinic_name = (TextView) itemView.findViewById(R.id.txt_doctor_name);
+            txt_clinic_name = (TextView) itemView.findViewById(R.id.txt_clinic_name);
 
             img_user = itemView.findViewById(R.id.img_user);
             container = itemView.findViewById(R.id.container);
