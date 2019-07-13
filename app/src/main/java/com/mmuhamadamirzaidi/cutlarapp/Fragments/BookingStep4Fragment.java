@@ -27,6 +27,7 @@ import com.mmuhamadamirzaidi.cutlarapp.Model.BookingInformation;
 import com.mmuhamadamirzaidi.cutlarapp.R;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -88,6 +89,7 @@ public class BookingStep4Fragment extends Fragment {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+                        resetStaticData();
                         getActivity().finish();
                         Toast.makeText(getContext(), "Booking success!", Toast.LENGTH_SHORT).show();
                     }
@@ -98,6 +100,14 @@ public class BookingStep4Fragment extends Fragment {
             }
         });
 
+    }
+
+    private void resetStaticData() {
+        Common.step = 0;
+        Common.currentTimeSlot = -1;
+        Common.currentClinic = null;
+        Common.currentDoctor = null;
+        Common.currentDate.add(Calendar.DATE, 0); //Current date added
     }
 
     BroadcastReceiver confirmBookingReceiver = new BroadcastReceiver() {
