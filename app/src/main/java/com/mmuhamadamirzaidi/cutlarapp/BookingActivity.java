@@ -80,8 +80,18 @@ public class BookingActivity extends AppCompatActivity {
                 if (Common.currentDoctor != null)
                     loadTimeSlotDoctor(Common.currentDoctor.getDoctorId());
             }
+            else if(Common.step == 3){ //Confirm booking
+                if (Common.currentTimeSlot != -1)
+                    confirmBooking();
+            }
             viewPager.setCurrentItem(Common.step);
         }
+    }
+
+    private void confirmBooking() {
+        //Send Local Broadcast to Fragment step 4
+        Intent intent = new Intent(Common.KEY_CONFIRM_BOOKING);
+        localBroadcastManager.sendBroadcast(intent);
     }
 
     private void loadTimeSlotDoctor(String doctorId) {
@@ -143,6 +153,8 @@ public class BookingActivity extends AppCompatActivity {
                 Common.currentClinic = intent.getParcelableExtra(Common.KEY_CLINIC_STORE);
             else if (step == 2)
                 Common.currentDoctor = intent.getParcelableExtra(Common.KEY_DOCTOR_SELECTED);
+            else if (step == 3)
+                Common.currentTimeSlot = intent.getIntExtra(Common.KEY_TIME_SLOT, -1);
 
             btn_next_step.setEnabled(true);
             setColorButton();
@@ -202,7 +214,8 @@ public class BookingActivity extends AppCompatActivity {
                     booking_step.setText("Step 4");
                     booking_instruction.setText("Confirm Booking");
                     btn_previous_step.setEnabled(true);
-                    btn_next_step.setText("CONFIRM");
+//                    btn_next_step.setEnabled(false);
+                    btn_next_step.setText("NEXT");
                 }
                 btn_next_step.setEnabled(false);
                 setColorButton();

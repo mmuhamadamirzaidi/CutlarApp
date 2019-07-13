@@ -63,7 +63,6 @@ public class MyClinicAdapter extends RecyclerView.Adapter<MyClinicAdapter.MyView
                     relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.bg_list));
 
                 //Set color for selected container
-//                myViewHolder.container.setBackgroundColor(context.getResources().getColor(R.color.onclick));
                 myViewHolder.container.setBackground(context.getResources().getDrawable(R.drawable.bg_onclick));
 
                 //Send Broadcast to tell Booking Activity to enable next button

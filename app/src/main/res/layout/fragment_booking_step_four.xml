@@ -1,20 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/dashboardPanel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:fontFamily="@font/mm"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="STEP 4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_phonged"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mm"
+                    android:text="Date"
+                    android:textColor="@color/textColor"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txt_booking_date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ml"
+                    android:text="Today, 14/07/2019"
+                    android:textColor="@color/textColor"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt_pbbhoned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/mm"
+                    android:text="Time"
+                    android:textColor="@color/textColor"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txt_booking_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/ml"
+                    android:text="11:00 am - 11:20 am"
+                    android:textColor="@color/textColor"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_member_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mm"
+                android:text="Doctor Information"
+                android:textColor="@color/textColor"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="@color/colorPrimaryDark"
+                    app:civ_border_width="2dp" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_booking_doctor_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ml"
+                android:text="Dr Ahmad Selamat"
+                android:textColor="@color/textColor"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/mm"
+                android:text="Clinic Information"
+                android:textColor="@color/textColor"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txt_clinic_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ml"
+                android:text="Clinic Address #State"
+                android:textColor="@color/textColor"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/txt_clinic_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ml"
+                android:text="+60 19-999 9999"
+                android:textColor="@color/textColor"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <!--<CheckBox-->
+                <!--android:id="@+id/booking_confirm_checkbox"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/textColor"-->
+                <!--android:textSize="18dp"-->
+                <!--android:text="Please tick to confirm booking"-->
+                <!--android:fontFamily="@font/ml"/>-->
+
+            <Button
+                android:id="@+id/btn_confirm"
+                android:text="CONFIRM"
+                android:background="@drawable/bgbtncreate"
+                android:fontFamily="@font/mm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFF"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
