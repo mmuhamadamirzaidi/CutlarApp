@@ -2,21 +2,22 @@ package com.mmuhamadamirzaidi.cutlarapp.Model;
 
 public class BookingInformation {
 
-    private String clientName, clientPhone, date, doctorId, doctorName, clinicId, clinicName, clinicAddress;
+    private String clientName, time, date, doctorId, doctorName, clinicId, clinicName, clinicAddress, clinicPhone;
     private Long slot;
 
     public BookingInformation() {
     }
 
-    public BookingInformation(String clientName, String clientPhone, String date, String doctorId, String doctorName, String clinicId, String clinicName, String clinicAddress, Long slot) {
+    public BookingInformation(String clientName, String time, String date, String doctorId, String doctorName, String clinicId, String clinicName, String clinicAddress, String clinicPhone, Long slot) {
         this.clientName = clientName;
-        this.clientPhone = clientPhone;
+        this.time = time;
         this.date = date;
         this.doctorId = doctorId;
         this.doctorName = doctorName;
         this.clinicId = clinicId;
         this.clinicName = clinicName;
         this.clinicAddress = clinicAddress;
+        this.clinicPhone = clinicPhone;
         this.slot = slot;
     }
 
@@ -28,12 +29,12 @@ public class BookingInformation {
         this.clientName = clientName;
     }
 
-    public String getClientPhone() {
-        return clientPhone;
+    public String getTime() {
+        return time;
     }
 
-    public void setClientPhone(String clientPhone) {
-        this.clientPhone = clientPhone;
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getDate() {
@@ -82,6 +83,14 @@ public class BookingInformation {
 
     public void setClinicAddress(String clinicAddress) {
         this.clinicAddress = clinicAddress;
+    }
+
+    public String getClinicPhone() {
+        return clinicPhone;
+    }
+
+    public void setClinicPhone(String clinicPhone) {
+        this.clinicPhone = clinicPhone;
     }
 
     public Long getSlot() {

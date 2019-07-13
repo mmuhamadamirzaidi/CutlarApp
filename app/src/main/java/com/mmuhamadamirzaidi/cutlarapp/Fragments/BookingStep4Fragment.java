@@ -62,13 +62,14 @@ public class BookingStep4Fragment extends Fragment {
         bookingInformation.setDoctorName(Common.currentDoctor.getName());
 
         bookingInformation.setClientName(Common.currentUser.getName());
-        bookingInformation.setClientPhone(Common.currentClinic.getPhone());
 
         bookingInformation.setClinicId(Common.currentClinic.getClinicId());
         bookingInformation.setClinicAddress(Common.currentClinic.getAddress());
+        bookingInformation.setClinicPhone(Common.currentClinic.getPhone());
         bookingInformation.setClinicName(Common.currentClinic.getName());
 
-        bookingInformation.setDate(new StringBuilder(Common.convertTimeSlotToString(Common.currentTimeSlot)).toString());
+        bookingInformation.setTime(new StringBuilder(Common.convertTimeSlotToString(Common.currentTimeSlot)).toString());
+        bookingInformation.setDate(simpleDateFormat.format(Common.currentDate.getTime()));
         bookingInformation.setSlot(Long.valueOf(Common.currentTimeSlot));
 
         //Submit to doctor document
