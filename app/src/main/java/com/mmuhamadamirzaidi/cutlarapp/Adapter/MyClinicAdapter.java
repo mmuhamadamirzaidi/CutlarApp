@@ -69,6 +69,7 @@ public class MyClinicAdapter extends RecyclerView.Adapter<MyClinicAdapter.MyView
                 //Send Broadcast to tell Booking Activity to enable next button
                 Intent intent = new Intent(Common.KEY_ENABLE_BUTTON_NEXT);
                 intent.putExtra(Common.KEY_CLINIC_STORE, clinicList.get(pos));
+                intent.putExtra(Common.KEY_STEP, 1);
                 localBroadcastManager.sendBroadcast(intent);
             }
         });

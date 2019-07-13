@@ -76,8 +76,18 @@ public class BookingActivity extends AppCompatActivity {
                     loadDoctorByClinic(Common.currentClinic.getClinicId());
                 }
             }
+            else if(Common.step == 2){ //Pick time slot
+                if (Common.currentDoctor != null)
+                    loadTimeSlotDoctor(Common.currentDoctor.getDoctorId());
+            }
             viewPager.setCurrentItem(Common.step);
         }
+    }
+
+    private void loadTimeSlotDoctor(String doctorId) {
+        //Send Local Broadcast to Fragment step 3
+        Intent intent = new Intent(Common.KEY_DISPLAY_TIME_SLOT);
+        localBroadcastManager.sendBroadcast(intent);
     }
 
     private void loadDoctorByClinic(String clinicId) {
@@ -126,7 +136,14 @@ public class BookingActivity extends AppCompatActivity {
     private BroadcastReceiver buttonNextReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Common.currentClinic = intent.getParcelableExtra(Common.KEY_CLINIC_STORE);
+
+            int step = intent.getIntExtra(Common.KEY_STEP, 0);
+
+            if (step == 1)
+                Common.currentClinic = intent.getParcelableExtra(Common.KEY_CLINIC_STORE);
+            else if (step == 2)
+                Common.currentDoctor = intent.getParcelableExtra(Common.KEY_DOCTOR_SELECTED);
+
             btn_next_step.setEnabled(true);
             setColorButton();
         }
@@ -187,6 +204,7 @@ public class BookingActivity extends AppCompatActivity {
                     btn_previous_step.setEnabled(true);
                     btn_next_step.setText("CONFIRM");
                 }
+//                btn_next_step.setEnabled(false);
                 setColorButton();
             }
 
