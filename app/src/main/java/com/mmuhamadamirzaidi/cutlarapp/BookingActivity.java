@@ -62,12 +62,15 @@ public class BookingActivity extends AppCompatActivity {
         if (Common.step == 3 || Common.step > 0) {
             Common.step--;
             viewPager.setCurrentItem(Common.step);
+            if (Common.step < 3){ //Always enable NEXT button when Step < 3
+                btn_next_step.setEnabled(true);
+                setColorButton();
+            }
         }
     }
 
     @OnClick(R.id.btn_next_step)
     void nextClick() {
-        Toast.makeText(this, "" + Common.currentClinic.getClinicId(), Toast.LENGTH_SHORT).show();
 
         if (Common.step < 3 || Common.step == 0) {
             Common.step++; //Increase
